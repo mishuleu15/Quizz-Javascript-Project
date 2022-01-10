@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Dosis:wght@500&family=Lato&family=Staatliches&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  --clr-bcg: #fff;
+  --clr-font: #282c35;
+  --clr-primary: #d23669;
+  --clr-secondary: #ff3478;
+}
+
+/*
+  =============== 
+  Global Styles
+  ===============
+  */
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: 'Dosis', sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Staatliches', cursive;
+  background: var(--clr-bcg);
+  color: var(--clr-font);
+  line-height: 1.5;
+  font-size: 1.5rem;
+  background: url('https://images.unsplash.com/photo-1539628399213-d6aa89c93074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 0.97;
+}
+
+.main-container {
+  background-color: whitesmoke;
+  min-width: 40vw;
+  height: 55vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 0 5px 12px var(--clr-font);
+}
+
+.wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25rem;
+}
+
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.progress-bar {
+  border: 1px solid var(--clr-font);
+  height: 2rem;
+}
+
+.score-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.score {
+  font-size: 2rem;
+}
+
+.section-A {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.section-B {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+
+.choice-container {
+  border: 1px solid var(--clr-font);
+  height: 2rem;
+  position: relative;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.choice-container:hover {
+  border: 1px solid var(--clr-secondary);
+}
+
+.btn {
+  height: 100%;
+  width: 20%;
+  position: absolute;
+  border-radius: 0;
+  border: 0;
+  background-color: var(--clr-font);
+  color: var(--clr-bcg);
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 3px 12px var(--clr-secondary);
+  transition: all 0.5s;
+  background-color: var(--clr-primary);
+}
+
+span {
+  margin: 7rem;
+  position: relative;
+  bottom: 2px;
+}

@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Dosis:wght@500&family=Lato&family=Staatliches&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  --clr-bcg: #fff;
+  --clr-font: #282c35;
+  --clr-primary: #d23669;
+  --clr-secondary: #ff3478;
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: 'Dosis', sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Staatliches', cursive;
+  background: var(--clr-bcg);
+  color: var(--clr-font);
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+div {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.title {
+  letter-spacing: 5px;
+  margin-bottom: 1rem;
+  font-size: 5rem;
+}
+
+.btn {
+  background-color: var(--clr-primary);
+  padding: 1px 4rem;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--clr-bcg);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+a:hover {
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 3px 12px var(--clr-secondary);
+  transition: all 0.5s;
+}
+
+a:active {
+  transform: translateY(2px);
+}
