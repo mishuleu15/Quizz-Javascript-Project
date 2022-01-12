@@ -1,1 +1,1 @@
-console.log('hi');
+const startBtn = document.getElementById('start');
