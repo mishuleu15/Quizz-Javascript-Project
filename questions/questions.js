@@ -31,22 +31,32 @@ const quizData = [
     d: 'none of the above',
     correct: 'b',
   },
+  {
+    question:
+      'Which type of error occurs when a programmer misspells a word or instruction?',
+    a: 'Runtime',
+    b: 'Logic',
+    c: 'Syntax',
+    d: 'System',
+    correct: 'c',
+  },
 ];
 
 const wrapper = document.querySelector('.wrapper');
-const nextBtn = document.querySelector('#btn-submit');
+const nextQuestion = document.querySelector('#btn-submit');
+const reset = document.querySelector('#btn-reset');
 
 let currentQuiz = 0;
 let runOnce = false;
 let question = 1;
 let score = 0;
-let width = 25;
+let width = 20;
 
 function scoreAndProgress(question, score) {
   return `<section class="section-A">
     <!-- Progress Bar -->
     <div class="progress-container">
-      <h3>Question ${question}/${4}</h3>
+      <h3>Question ${question}/${quizData.length}</h3>
       <div class="progress-bar">
         <div class="fill-bar" style='width:${width}%'></div>
       </div>
@@ -60,22 +70,22 @@ function scoreAndProgress(question, score) {
 }
 
 function quizQuestions(currentQuiz) {
-  let section = `<h3>${quizData[currentQuiz].question}</h3>
+  let section = `<h5>${quizData[currentQuiz].question}</h5>
     <section class="section-B">
       <div class="choice-container">
-        <button class="btn" id='1' onclick=chooseAnswer(this) >a</button>
+        <button class="btn" onclick=chooseAnswer(this) >a</button>
         <span>${quizData[currentQuiz].a}</span>
       </div>
 
       <div class="choice-container">
-        <button class="btn" id='2' onclick=chooseAnswer(this) >b</button><span>${quizData[currentQuiz].b}</span>
+        <button class="btn" onclick=chooseAnswer(this) >b</button><span>${quizData[currentQuiz].b}</span>
       </div>
 
       <div class="choice-container">
-        <button class="btn" id='3' onclick=chooseAnswer(this) >c</button><span>${quizData[currentQuiz].c}</span>
+        <button class="btn" onclick=chooseAnswer(this) >c</button><span>${quizData[currentQuiz].c}</span>
       </div>
       <div class="choice-container">
-        <button class="btn"id='4'  onclick=chooseAnswer(this) >d</button><span>${quizData[currentQuiz].d}</span>
+        <button class="btn" onclick=chooseAnswer(this) >d</button><span>${quizData[currentQuiz].d}</span>
       </div>
     </section>`;
   wrapper.innerHTML += section;
@@ -87,24 +97,33 @@ function chooseAnswer(choice) {
   }
 
   if (choice.textContent === quizData[currentQuiz].correct) {
-    choice.style.backgroundColor = 'green';
     runOnce = true;
+    score++;
   } else {
-    choice.style.backgroundColor = 'red';
     runOnce = true;
   }
+  wrapper.innerHTML = scoreAndProgress(question, score);
+  quizQuestions(currentQuiz);
 }
 
-nextBtn.addEventListener('click', () => {
-  if (question === 4) {
+nextQuestion.addEventListener('click', () => {
+  if (runOnce === false || question === quizData.length) {
     return;
   }
   currentQuiz++;
   question++;
-  width += 25;
+  width += 20;
   wrapper.innerHTML = scoreAndProgress(question, score);
   quizQuestions(currentQuiz);
-  scoreAndProgress(question, score);
+  runOnce = false;
+});
+
+reset.addEventListener('click', () => {
+  if (question < 5) {
+    reset.setAttribute('href', '#');
+  } else {
+    reset.setAttribute('href', 'http://127.0.0.1:5500/');
+  }
 });
 
 // On Load

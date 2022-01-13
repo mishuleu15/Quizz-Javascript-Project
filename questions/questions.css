@@ -142,3 +142,40 @@ span {
   bottom: 5px;
   font-size: 1.1rem;
 }
+
+.btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.btn-submit,
+.btn-reset {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #282c35;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.btn-submit {
+  padding: 0.6rem 1.1rem;
+}
+
+.btn-reset {
+  text-decoration: none;
+  font-size: small;
+}
+
+.btn-submit:hover,
+.btn-reset:hover {
+  background-color: #ff3478;
+  transition: all 0.5s;
+}
+
+.btn-submit:active,
+.btn-reset:active {
+  transform: translateY(2px);
+}
