@@ -44,7 +44,7 @@ body {
 
 .main-container {
   background-color: whitesmoke;
-  min-width: 40vw;
+  width: 37.5rem;
   height: 55vh;
   position: fixed;
   top: 50%;
@@ -178,4 +178,18 @@ span {
 .btn-submit:active,
 .btn-reset:active {
   transform: translateY(2px);
+}
+
+/* Media Queries Mobile */
+
+@media screen and (max-width: 645px) {
+  .main-container {
+    width: 22rem;
+  }
+  .wrapper {
+    width: 20rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
 }
