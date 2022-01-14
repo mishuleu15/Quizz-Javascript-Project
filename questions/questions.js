@@ -53,20 +53,21 @@ let score = 0;
 let width = 20;
 
 function scoreAndProgress(question, score) {
-  return `<section class="section-A">
-    <!-- Progress Bar -->
+  let section = `<section class="section-A">
     <div class="progress-container">
       <h3>Question ${question}/${quizData.length}</h3>
       <div class="progress-bar">
         <div class="fill-bar" style='width:${width}%'></div>
       </div>
     </div>
-    <!-- Score -->
+    
     <div class="score-container">
       <h3>Score</h3>
       <div class="score" id="scoreId">${score}</div>
     </div>
     </section>`;
+  wrapper.innerHTML += section;
+  return section;
 }
 
 function quizQuestions(currentQuiz) {
@@ -127,4 +128,5 @@ reset.addEventListener('click', () => {
 });
 
 // On Load
+scoreAndProgress(question, score);
 quizQuestions(currentQuiz);
